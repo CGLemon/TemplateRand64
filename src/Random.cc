@@ -242,7 +242,7 @@ std::uint64_t Random<random_t::WyHash>::randuint64() {
    * https://github.com/lemire/testingRNG/blob/master/source/wyhash.h
    */
 
-  static constexpr size_t seed_Idx = SEED_SZIE - 1;
+  static constexpr size_t seed_Idx = 0;
 
 #ifdef LINUX_KEY
   Random<random_t::WyHash>::m_seeds[seed_Idx] += 0x60bee2bee120fc15;
