@@ -115,7 +115,7 @@ std::uint64_t Random<random_t::SplitMix_64>::randuint64() {
    * The parameter detail are from
    * https://github.com/lemire/testingRNG/blob/master/source/splitmix64.h
    */
-  static constexpr size_t seed_Idx = 0;
+  constexpr size_t seed_Idx = 0;
 
   Random<random_t::SplitMix_64>::m_seeds[seed_Idx] += 0x9e3779b97f4a7c15;
   auto z = Random<random_t::SplitMix_64>::m_seeds[seed_Idx];
@@ -219,7 +219,7 @@ std::uint64_t Random<random_t::WyRand>::randuint64() {
    * https://github.com/lemire/testingRNG/blob/master/source/wyrand.h
    */
 
-  static constexpr size_t seed_Idx = 0;
+  constexpr size_t seed_Idx = 0;
 
 #ifdef LINUX_KEY
   Random<random_t::WyRand>::m_seeds[seed_Idx] += 0xa0761d6478bd642f;
@@ -242,7 +242,7 @@ std::uint64_t Random<random_t::WyHash>::randuint64() {
    * https://github.com/lemire/testingRNG/blob/master/source/wyhash.h
    */
 
-  static constexpr size_t seed_Idx = 0;
+  constexpr size_t seed_Idx = 0;
 
 #ifdef LINUX_KEY
   Random<random_t::WyHash>::m_seeds[seed_Idx] += 0x60bee2bee120fc15;
