@@ -1,5 +1,5 @@
 # TemplateRand64
-64 位元亂數產生庫
+64 位元亂數生成庫
 
 # 容易使用
 使用模板編成，有通用統一的界面，例如
@@ -12,8 +12,15 @@
     
     
 # 支持多線程
-請看 example/example-2
+可以自動對不同線程使用不同的亂數，請看 example/example-2
 
+# 支持標準庫
+可以和 c++11 的亂數庫一起使用
+
+    std::uniform_real_distribution<float> normal_dist(0.0,1.0);
+    auto rng = Random<random_t::SplitMix_64>::get_Rng();
+    float rand = normal_dist(rng);
+    
 # 亂數種子
 自定義亂數種子
 
