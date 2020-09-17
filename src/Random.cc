@@ -1,5 +1,7 @@
 #include "Random.h"
 
+#include <chrono>
+
 namespace random_utils {
 
 static inline std::uint64_t splitmix64(std::uint64_t z) {
@@ -23,7 +25,7 @@ static inline std::uint64_t get_seed(std::uint64_t seed) {
     auto thread_id = std::hash<std::thread::id>()(std::this_thread::get_id());
     seed = static_cast<std::uint64_t>(thread_id);
   } else if (seed == TIME_SEED) {
-    auto get_time = std::time(NULL);
+    auto get_time = std::chrono::system_clock::now().time_since_epoch().count();
     seed = static_cast<std::uint64_t>(get_time);
   }
   return seed;
