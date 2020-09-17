@@ -1,7 +1,7 @@
 # TemplateRand64
 64 位元亂數生成庫
 
-# 容易使用
+# 易於使用
 使用模板編成，有通用統一的界面，例如
 
     auto rng_splitmix = Random<random_t::SplitMix_64>::get_Rng();
@@ -11,10 +11,10 @@
     std::uint64_t rand_b = rng_widynski.randuint64();
     
     
-# 支持多線程
-可以自動對不同線程使用不同的亂數，請看 example/example-2
+# 支援多執行緒
+可以自動對不同執行緒生成不同的亂數，請看 example/example-2
 
-# 支持標準庫
+# 支援標準庫
 可以和 c++11 的亂數庫一起使用
 
     std::uniform_real_distribution<float> normal_dist(0.0,1.0);
@@ -24,17 +24,17 @@
 # 亂數種子
 自定義亂數種子
 
-    auto rng = Random<random_t::SplitMix_64>::get_Rng(123456);
+    auto rng = Random<random_t::SplitMix_64>::get_Rng(123456ULL);
     
 由時間自動生成
 
     auto rng = Random<random_t::SplitMix_64>::get_Rng(TIME_SEED);
      
-由線程自動生成
+由執行緒自動生成
 
     auto rng = Random<random_t::SplitMix_64>::get_Rng(THREADS_SEED);
 
-# 支持的方法
+# 支援的方法
 1. SplitMix_64
 
 2. XoroShiro128Plus
